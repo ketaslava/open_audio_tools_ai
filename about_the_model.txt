@@ -1,0 +1,19 @@
+task = determine gender features of the sound
+output_values = [femininity, masculinity, atypicality]
+bitrate = 48000
+sample_duration = 2S
+sample_size = 96000 values (Float)
+sample_crop_from_data_rules = [Not silence > 50%]
+internal_sample_crop = None
+max_overlap = 50%
+
+! For voice and other gendered human sounds, at least one feature must be 1.0 and at least one should be 0.0.
+For silence, all features must be 0.0
+
+nn input tensor:
+spectrogram with spectrum frame 25ms and hop 10ms = 100 frames per second, total 200 frames per 2 seconds
+where
+spectrum is a linear frame between 0 Hz and 8192 Hz with 256 values resolution
+
+Sigmoid can be inside the model if paired with BCELoss, or outside if paired with BCEWithLogitsLoss. Never mix — never put Sigmoid inside the model AND use BCEWithLogitsLoss.
+So, in current version, it is crucial to apply the sigmoid to the output of the model during use to get correct results from 0.0 to 1.0

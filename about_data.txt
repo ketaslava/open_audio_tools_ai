@@ -1,0 +1,10 @@
+dataset values rules:
+ * 3 values: femininity, masculinity, atypicality
+ for voice:
+ * at leat one is 1.0 
+ * at least one is 0.0
+ for other sounds:
+ * all 0.0s
+
+! All directories (speakers) should be described in speakers_info.csv,
+however speakers_info.csv can include speakers not present in directories

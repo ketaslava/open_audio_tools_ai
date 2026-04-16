@@ -1,0 +1,7 @@
+===== MODEL PERFORMANCE RATING =====
+ 1. model_best_c.pth                          error=0.18880130
+ 2. model_best_a.pth                          error=0.19797653
+ 3. model_a_ep67.pth                          error=0.20453970
+ 4. model_best_b.pth                          error=0.21069711
+====================================
+

@@ -1,0 +1,17 @@
+CPU / CUDA calculations may work differently during runs inside venv and runs without venv
+
+
+BCEWithLogitsLoss scale
+BCE loss is bounded between 0 and ln(2) ≈ 0.693 for random predictions on balanced binary data. So:
+0.693 — model is guessing randomly, learned nothing
+0.3–0.5 — model is learning something but poorly
+0.1–0.2 — decent, model has learned meaningful patterns
+0.05–0.1 — good
+below 0.05 — very good for a subjective perceptual task
+
+
+For a CNN of this size on a few tens of hours of audio, you typically see:
+Epochs 1–20 — rapid loss drop, the model is learning basic structure
+Epochs 20–100 — slower improvement, model is refining
+Epochs 100–300 — marginal gains, dev loss may start diverging from train loss here
+Beyond 300 — usually overfitting territory for a dataset of your size

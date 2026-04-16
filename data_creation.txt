@@ -1,0 +1,4 @@
+1. Unpack data to the sources
+2. Process sources to the main dataset trough helpers/structurize_data.py (Configs are in processors for each DS)
+3. Markup all data use helpers/data_markup_app
+4. Convert dataset to training data format using helpers/convert_data_to_training_format.py

@@ -1,0 +1,17 @@
+data/1_sources/*
+data/2_structure_and_markup/*
+data/3_training_data/*
+data/archive/*
+
+misc/datasets/*
+misc/models/*
+
+venv
+
+# Idea
+.idea/
+
+# Python
+__pycache__/
+*.py[codz]
+*$py.class
